@@ -1,33 +1,19 @@
 const { gql } = require('apollo-server')
 
 const typeDefs = gql` 
-  """
-  ENUM
-  """
+  scalar Timestamp
 
-  """
-  TYPES 
-  """
-  
-  """
-  INTERFACE
-  """
-
-  """
-  IMPLEMENTS
-  """
-
-  """
-  INPUT
-  """
-
-  """
-  QUERY
-  """
-
-  """
-  MUTATION
-  """
+  type Movie {
+    id: ID
+    createdAt: Timestamp
+    name: String
+    genre: String
+    country: String
+    language: String
+  }
+  type Query {
+    movies: [Movie]
+  }
 `
 
 module.exports = typeDefs
