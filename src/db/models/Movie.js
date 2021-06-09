@@ -1,3 +1,5 @@
+const { ApolloError } = require('apollo-server-errors');
+
 const { uuid } = require('uuidv4')
 
 const movieModel = db => {
@@ -22,9 +24,10 @@ const movieModel = db => {
     create(movie) {
       const newMovie = { id: uuid(), createdAt: Date.now(), ...movie }
       const data = db.get('movie').filter(movie).value()
+      console.log(data)
+
       if (!data.length) db.get('movie').push(newMovie).write()
-      else return new ApolloError("This movie already exists. Try other name!")
-      db.get('movie').push(newMovie).write()
+      else return new ApolloError("This movie already exists. Try another name!")
       return newMovie
     }
   }

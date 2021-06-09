@@ -35,8 +35,29 @@ const typeDefs = gql`
     name: String
   }
 
+  enum Genre {
+    ACTION,
+    ADVENTURE,
+    DRAMA
+  }
+
+  enum Language {
+    PORTUGUESE,
+    ENGLISH,
+    SPANISH
+  }
+
+  input movieInput {
+    name: String
+    genre: Genre
+    country: String
+    language: Language
+    money: Float
+  }
+
   type Mutation {
     createUser(data: userInput): User
+    createMovie(data: movieInput): Movie
   }
 `
 
