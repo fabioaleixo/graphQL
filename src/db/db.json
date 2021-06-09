@@ -3,6 +3,10 @@
     {
       "id": "1",
       "name": "Keanu Reeves"
+    },
+    {
+      "id": "757a46fc-4d5a-45d3-828d-d38ed47a2136",
+      "name": "Teste"
     }
   ],
   "movie": [
@@ -13,7 +17,8 @@
       "genre": "Action",
       "country": "EUA",
       "language": "English",
-      "actor": "1"
+      "actor": "1",
+      "money": 39.9
     }
   ],
   "awards": [

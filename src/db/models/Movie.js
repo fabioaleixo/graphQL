@@ -13,7 +13,7 @@ const movieModel = db => {
         .value()
     },
 
-    findAwards(id) {
+    findAwards({ id }) {
       return db.get('awards')
         .filter({ id_movie: id })
         .value()
